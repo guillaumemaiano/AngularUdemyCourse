@@ -37,6 +37,9 @@ export class AppComponent {
     return !(this.password.desiredLength != 0 && (this.options.useLetters || this.options.useNumbers || this.options.useSymbols));
   }
 
+  passwordExists(): boolean {
+    return this.password.value != "";
+  }
   // worst generator in the world
   private generate(): string {
     var generatedPassword = "";

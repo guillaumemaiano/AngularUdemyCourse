@@ -36,10 +36,10 @@
       <div>
         <label>Here's your sexy sweaty password:
         </label>
-        <input [value]="password.value" />
+        <input [value]="password.value" *ngIf="passwordExists()"/>
       </div>
       <hr />
-      <h2 class="title has-text-centered"> Your password is: {{ password.value }}</h2>
+      <h2 class="title has-text-centered" *ngIf="passwordExists()"> Your password is: {{ password.value }}</h2>
 
     </div>
   </div>
