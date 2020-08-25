@@ -12,7 +12,9 @@ export class AppComponent {
 
   onChangeLength(value: string) {
     const parsedLength = parseInt(value);
-    if (!isNaN(parsedLength)) {
+    if (isNaN(parsedLength) || parsedLength <= 0) {
+      this.password.desiredLength = 0;
+    } else {
       this.password.desiredLength = parsedLength;
     }
   }
@@ -27,7 +29,39 @@ export class AppComponent {
   }
 
   onButtonClick() {
-    this.password.value = "1generatedPWD!";
+    this.password.value = this.generate();
     console.log('Super secure log: ' + this.password.value + ` with options ${this.options.useLetters}`);
+  }
+
+  shouldEnableButton() {
+    return !(this.password.desiredLength != 0 && (this.options.useLetters || this.options.useNumbers || this.options.useSymbols));
+  }
+
+  // worst generator in the world
+  private generate(): string {
+    var generatedPassword = "";
+    const someSymbols = "[|_]";
+    const someLetters = "azerty";
+    const someNumbers = "123";
+    var validChars = "";
+
+    if (this.options.useSymbols) {
+     validChars += someSymbols;
+    }
+    if (this.options.useNumbers) {
+      validChars += someNumbers;
+     }
+     if (this.options.useLetters) {
+      validChars += someLetters;
+     }
+    for (var i = 0; i < this.password.desiredLength; i++) {
+
+      // choose randomly within the acceptable values
+      const index = Math.floor(Math.random() * validChars.length);
+      if (index < validChars.length) {
+          generatedPassword += validChars[index];
+      }
+    }
+    return generatedPassword;// "1generatedPWD!"
   }
 }

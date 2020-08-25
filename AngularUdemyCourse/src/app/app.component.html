@@ -1,30 +1,46 @@
-<h1> Udemy Angular Course Password Generator Thingie</h1>
-<div>
-<label>Password length
-</label>
-<input (change)="onChangeLength($event.target.value)"/>
-</div>
-<div>
-  <label>Use letters
-  </label>
-  <input type="checkbox" (change)="onChangeUseLetters()"/>
-  </div>
-  <div>
-    <label>Use numbers
-    </label>
-    <input type="checkbox" (change)="onChangeUseNumbers()"/>
-    </div>
-    <div>
-      <label>Use symbols
-      </label>
-      <input type="checkbox" (change)="onChangeUseSymbols()"/>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-half">
+
+      <h1> Udemy Angular Course Password Generator Thingie</h1>
+      <div class="field">
+        <label>Password length
+        </label>
+        <input (change)="onChangeLength($event.target.value)" />
       </div>
-<div>
-  <button (click)="onButtonClick()">Generate a password that looks cool and is strong like Mr Muscle!</button>
-</div>
-<div>
-  <label>Here's your sexy sweaty password:
-  </label>
-  <input [value]="password.value"/>
+      <div class="field">
+        <label>
+          <input type="checkbox" (change)="onChangeUseLetters()" />
+          Use letters
+        </label>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox" (change)="onChangeUseNumbers()" />
+            Use numbers
+          </label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control"></div>
+        <label class="checkbox">
+          <input type="checkbox" (change)="onChangeUseSymbols()" />
+          Use symbols
+        </label>
+      </div>
+      <div>
+        <button [disabled]="shouldEnableButton()" (click)="onButtonClick()">Generate a password that looks cool and is
+          strong like Mr Muscle!</button>
+      </div>
+      <div>
+        <label>Here's your sexy sweaty password:
+        </label>
+        <input [value]="password.value" />
+      </div>
+      <hr />
+      <h2 class="title has-text-centered"> Your password is: {{ password.value }}</h2>
+
+    </div>
   </div>
-  {{ password.value }}
+</div>
