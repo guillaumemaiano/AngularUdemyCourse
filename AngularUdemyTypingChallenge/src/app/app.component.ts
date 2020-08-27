@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'], 
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
@@ -40,11 +41,12 @@ export class AppComponent {
         if (!fail) {
           correct += content[iterator];
         } else {
-          incorrect += content[iterator];
+          // dispaly which part of the correct sentence was incorrectly typed
+          incorrect += this.sentence[iterator];
         }
       } else {
         fail = true;
-        incorrect += content[iterator];
+        incorrect += this.sentence[iterator];
       }
     }
     unknown = this.sentence.slice(content.length);
@@ -80,7 +82,7 @@ export class AppComponent {
       this.sentence += ` ${this.THESAURUS[Math.floor(Math.random()*this.THESAURUS.length)]}`;
     }
     this.sentence = this.sentence.trim();
-    this.displaySentence = `<div class='unknownValidity'>${this.sentence}</div>`;
+    this.displaySentence = `<span class='unknownValidity'>${this.sentence}</span>`;
   };
 
 }

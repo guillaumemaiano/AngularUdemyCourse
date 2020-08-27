@@ -4,7 +4,8 @@
 
       <h1> Type Game</h1>
       <div class="field">
-        <label class="has-text-centered">{{displaySentence}}</label>
+        <!--seriously, to style innerHTML you pass in yourself, you NEED to remove encpasulation from the whole module? -->
+        <label class="has-text-centered" innerHTML="{{displaySentence}}"></label>
         <br/>
         <input (change)="onChangeSentence($event.target.value)" (input)="onInput($event.target.value)" />
       </div>
