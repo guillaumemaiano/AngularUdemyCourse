@@ -39,12 +39,16 @@ export class AppComponent {
       if (content[iterator] == this.sentence[iterator]) {
         if (!fail) {
           correct += content[iterator];
+        } else {
+          incorrect += content[iterator];
         }
       } else {
         fail = true;
+        incorrect += content[iterator];
       }
     }
-    // I probably could improve using splice
+    unknown = this.sentence.slice(content.length);
+    // I probably could improve using slice more
     this.displaySentence = `<span class='correct'>${correct}</span><span class='incorrect'>${incorrect}</span><span class='unknownValidity'>${unknown}</span>`;
   };
 
