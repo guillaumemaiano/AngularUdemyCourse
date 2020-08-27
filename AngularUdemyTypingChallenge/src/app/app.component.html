@@ -5,7 +5,7 @@
       <h1> Type Game</h1>
       <div class="field">
         <label>{{sentence}}</label>
-        <input (change)="onChangeLength($event.target.value)" />
+        <input (change)="onChangeSentence($event.target.value)" />
       </div>
       <hr />
       <div *ngIf="success()">
