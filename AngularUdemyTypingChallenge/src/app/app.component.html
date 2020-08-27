@@ -4,8 +4,10 @@
 
       <h1> Type Game</h1>
       <div class="field">
-        <!--seriously, to style innerHTML you pass in yourself, you NEED to remove encpasulation from the whole module? -->
-        <label class="has-text-centered" innerHTML="{{displaySentence}}"></label>
+        <!--seriously, to style innerHTML you pass in yourself, you NEED to remove encapsulation from the whole module? -->
+        <label class="has-text-centered" innerHTML="{{displaySentence}}"></label><br/>
+        <!-- Much more correct, a Native solution (Grider's)-->
+        <span [class]="compare(letter, filledValue[i])" *ngFor="let letter of sentence.split(''); let i = index;">{{letter}}</span>
         <br/>
         <input (change)="onChangeSentence($event.target.value)" (input)="onInput($event.target.value)" />
       </div>

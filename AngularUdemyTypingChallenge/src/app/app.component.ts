@@ -41,7 +41,7 @@ export class AppComponent {
         if (!fail) {
           correct += content[iterator];
         } else {
-          // dispaly which part of the correct sentence was incorrectly typed
+          // display which part of the correct sentence was incorrectly typed
           incorrect += this.sentence[iterator];
         }
       } else {
@@ -75,6 +75,14 @@ export class AppComponent {
     return false;
   };
 
+  // method necessary for Grider's solution
+  compare(randomLetter: string, enteredLetter: string) {
+    if (!enteredLetter) {
+      return 'unknownValidity';
+    }
+    return randomLetter === enteredLetter ? "correct" : "incorrect";
+  }
+
   private generateNewGame() {
     this.sentence = '';
     length = Math.ceil(Math.random() * this.MAX_SIZE);
@@ -83,6 +91,7 @@ export class AppComponent {
     }
     this.sentence = this.sentence.trim();
     this.displaySentence = `<span class='unknownValidity'>${this.sentence}</span>`;
+    // To reset the input box, ngModel is needed
   };
 
 }
