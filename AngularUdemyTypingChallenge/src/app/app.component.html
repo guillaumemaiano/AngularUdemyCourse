@@ -4,12 +4,14 @@
 
       <h1> Type Game</h1>
       <div class="field">
-        <label>{{sentence}}</label>
-        <input (change)="onChangeSentence($event.target.value)" />
+        <label class="has-text-centered">{{displaySentence}}</label>
+        <br/>
+        <input (change)="onChangeSentence($event.target.value)" (input)="onInput($event.target.value)" />
       </div>
       <hr />
       <div *ngIf="success()">
       <h2 class="title has-text-centered">Well done, you made it!</h2>
+      <br/>
         <button [disabled]="!success()" (click)="onButtonClick()">New game</button>
       </div>
     </div>

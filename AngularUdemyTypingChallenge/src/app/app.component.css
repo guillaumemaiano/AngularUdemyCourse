@@ -1,0 +1,9 @@
+.unknownValidity {
+    color: black;
+}
+.incorrect {
+    color: red;
+}
+.correct {
+    color: green;
+}
