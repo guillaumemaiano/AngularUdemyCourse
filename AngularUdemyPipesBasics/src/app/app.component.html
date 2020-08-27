@@ -51,5 +51,20 @@
       </div>
     </div>
   </div>
-    
+
+  <hr/>
+  <div class="row">
+    <div class="form-group col">
+      <label>Length in inches</label>
+      <input class="form-control" (input)="onLengthChange($event.target.value)" />
+    </div>
+    <div class="col">
+      <label>
+        <b>Length in cm</b>
+      </label>
+      <div>
+        {{length | convertLength}}
+      </div>
+    </div>
+  </div>
 </div>

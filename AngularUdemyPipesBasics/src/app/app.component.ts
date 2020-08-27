@@ -9,6 +9,7 @@ export class AppComponent {
   name: string;
   date: string;
   money: string;
+  length: string;
 
   onDateChange(dateFieldText:string) {
     this.date = dateFieldText;
@@ -18,5 +19,8 @@ export class AppComponent {
   }
   onMoneyChange(moneyFieldText:string) {
     this.money = moneyFieldText;
+  }
+  onLengthChange(lengthFieldText:string) {
+    this.length = lengthFieldText;
   }
 }
