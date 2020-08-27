@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-half">
+
+      <h1> Type Game</h1>
+      <div class="field">
+        <label>{{sentence}}</label>
+        <input (change)="onChangeLength($event.target.value)" />
+      </div>
+      <hr />
+      <div *ngIf="success()">
+      <h2 class="title has-text-centered">Well done, you made it!</h2>
+        <button [disabled]="!success()" (click)="onButtonClick()">New game</button>
+      </div>
+    </div>
+  </div>
+</div>
