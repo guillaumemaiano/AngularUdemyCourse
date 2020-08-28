@@ -6,10 +6,13 @@ import pqm from "pqm";
 })
 export class ConvertLengthPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): unknown {
+  transform(value: string, targetUnits: string, ...args: unknown[]): unknown {
+    if (targetUnits != "cm") {
+      return "unsupported unit";
+    }
     let lengthInInches = parseInt(value);
     if (!isNaN(lengthInInches)) {
-      return pqm.quantity(value,"in").in("cm");
+      return pqm.quantity(value,"in").in(targetUnits);
     } else {
       return value;
     }
