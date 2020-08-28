@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <hr/>
+  <hr />
 
   <div class='row'>
     <div class="col">
@@ -52,7 +52,7 @@
     </div>
   </div>
 
-  <hr/>
+  <hr />
   <div class="row">
     <div class="form-group col">
       <label>Length in inches</label>
@@ -62,8 +62,11 @@
       <label>
         <b>Length in cm</b>
       </label>
-      <div>
-        {{length | convertLength : 'cm'}}
+      <div *ngIf="(length | convertLength : 'cm') > 100.0">
+        {{length | convertLength : 'm' | number: '1.0-2'}}
+      </div>
+      <div *ngIf="(length | convertLength : 'cm') <= 100">
+        {{length | convertLength : 'cm' | number: '1.0-2'}}
       </div>
     </div>
   </div>

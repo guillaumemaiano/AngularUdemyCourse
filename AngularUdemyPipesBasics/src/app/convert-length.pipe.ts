@@ -7,7 +7,7 @@ import pqm from "pqm";
 export class ConvertLengthPipe implements PipeTransform {
 
   transform(value: string, targetUnits: string, ...args: unknown[]): unknown {
-    if (targetUnits != "cm") {
+    if (targetUnits != "cm" && targetUnits != "m") {
       return "unsupported unit";
     }
     let lengthInInches = parseInt(value);
