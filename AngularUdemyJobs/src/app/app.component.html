@@ -20,6 +20,17 @@
   <div>
     <img src={{jobs[currentPage].url}}>
     {{jobs[currentPage].company}}
+    <div [ngSwitch]="currentPage">
+        <div *ngSwitchCase=3>
+          This was highly dangerous but so much fun.
+        </div>
+        <div *ngSwitchCase=2>
+          I had to quit this job because of the allergy to codeine.
+        </div>
+        <div *ngSwitchCase=1>
+          I had to quit this job because of the allergy to caffeine.
+        </div>
+    </div>
   </div>
 
 </div>
