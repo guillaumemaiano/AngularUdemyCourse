@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { CssClassDirective } from './css-class.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CssClassDirective
   ],
   imports: [
     BrowserModule
