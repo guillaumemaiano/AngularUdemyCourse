@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   currentPage= 0;
+  getPinned() {
+    // the only page that doesn't "exist" is a negative number one... so let's make one
+    this.currentPage = -1;
+  };
+  // simulate pinning functionality
+  hasPinned(): boolean { return true};
   jobs = [
     {
       company: "BIG CORP SAS",

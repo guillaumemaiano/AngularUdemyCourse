@@ -1,22 +1,23 @@
 <div class="container">
-<nav>
-  <ul class="pagination">
-    <li 
-    class="page-item"  
-    [ngClass]="{active : i === currentPage}"
-    *ngFor="let job of jobs; let i = index;">
-      <a class="page-link" (click)="currentPage = i;">{{i + 1}}</a>
-    </li>
-    <li 
-    class="page-item"  
-    [ngClass]="{disabled : true}">
-      <a class="page-link">Pinned News</a>
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="{active : i === currentPage}" *ngFor="let job of jobs; let i = index;">
+        <a class="page-link" (click)="currentPage = i;">{{i + 1}}</a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled : hasPinned()}">
+        <a class="page-link" (click)="getPinned()">Pinned News</a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled : currentPage === (jobs.length -1)}" >
+        <a class="page-link" (click)="currentPage = currentPage+1;">Earlier</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="currentPage = jobs.length-1;">Earliest</a>
+      </li>
+    </ul>
+  </nav>
   <div *ngFor="let job of jobs;">
-  {{job.company}}
-  <img src={{job.url}}>
-</div>
+    {{job.company}}
+    <img src={{job.url}}>
+  </div>
 
 </div>
