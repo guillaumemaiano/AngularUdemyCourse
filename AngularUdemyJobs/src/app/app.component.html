@@ -15,9 +15,9 @@
       </li>
     </ul>
   </nav>
-  <div *ngFor="let job of jobs;">
-    {{job.company}}
-    <img src={{job.url}}>
+  <div>
+    <img src={{jobs[currentPage].url}}>
+    {{jobs[currentPage].company}}
   </div>
 
 </div>
