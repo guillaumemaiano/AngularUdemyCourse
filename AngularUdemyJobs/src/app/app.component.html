@@ -5,7 +5,12 @@
     class="page-item"  
     [ngClass]="{active : i === currentPage}"
     *ngFor="let job of jobs; let i = index;">
-      <a class="page-link">{{i + 1}}</a>
+      <a class="page-link" (click)="currentPage = i;">{{i + 1}}</a>
+    </li>
+    <li 
+    class="page-item"  
+    [ngClass]="{disabled : true}">
+      <a class="page-link">Pinned News</a>
     </li>
   </ul>
 </nav>
