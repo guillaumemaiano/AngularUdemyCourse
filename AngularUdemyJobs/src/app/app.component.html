@@ -20,7 +20,7 @@
   <div>
     <img src={{jobs[currentPage].url}}>
     {{jobs[currentPage].company}}
-    <div [ngSwitch]="currentPage"  appCssClass>
+    <div [ngSwitch]="currentPage"  appCssClass [customColor]=" 'red' ">
         <div *ngSwitchCase=3>
           This was highly dangerous but so much fun.
         </div>
