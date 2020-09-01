@@ -1,0 +1,16 @@
+<h1>How to lazily load an Angular module</h1>
+<ol>
+    <li>Remove any existing <span class="code">import</span> statement for the module anywhere in the project</li>
+    <li>In the AppRoutingModule, define a Route in the '<span class="code">routes</span>' array to specify when to load up that module</li>
+    <li>In the lazy loaded module's Routing file, edit the '<span class='code'>path</span>' of each route to be relative to the AppRoutingModule-defined path.</li>
+</ol>
+<div class="ui message">
+    <h2>Use some JS to load the LazyLoaded element</h2>
+    <p>Note how instead of component, we use '<span class="code">loadChildren</span>', and a callback.</p>
+    <p>Assumption: we created a lazy loaded module called "lazy-loaded"...</p>
+    <div class='code'>
+       {{ '{ ' }} path: 'lazy-loaded', 
+          loadChildren: () => import('./lazy-loaded/lazy-loaded.module').then(m => m.LazyLoadedModule)
+        {{'}'}}
+    </div>
+</div>

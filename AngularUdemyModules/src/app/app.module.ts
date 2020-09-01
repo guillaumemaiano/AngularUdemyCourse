@@ -18,7 +18,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     ElementsModule,
     CollectionsModule,
-    // APpRouting Module last, else it preempts module routing!
+    // AppRouting Module last, else it preempts module routing!
     AppRoutingModule
   ],
   providers: [],

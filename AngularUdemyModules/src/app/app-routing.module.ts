@@ -4,6 +4,9 @@ import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes: Routes = [
+  { path: 'lazy-loaded', 
+    loadChildren: () => import('./lazy-loaded/lazy-loaded.module').then(m => m.LazyLoadedModule)
+  },
   {path: '', component: HomeComponent},
   {path: '**', component: NotFoundComponent}
 ];
