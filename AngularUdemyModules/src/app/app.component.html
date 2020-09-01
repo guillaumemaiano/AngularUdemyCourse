@@ -1,3 +1,12 @@
-<a routerLink="/elements">Elements</a>
-<a routerLink="/collections">Collections</a>
-<router-outlet></router-outlet>
+<div class="ui container">
+    <!-- navigation -->
+    <div class="ui secondary pointing menu">
+
+        <a routerLink="/elements">Elements</a>
+        <a routerLink="/collections">Collections</a>
+    </div>
+    <!-- content -->
+    <div class="ui segment">
+        <router-outlet></router-outlet>
+    </div>
+</div>
