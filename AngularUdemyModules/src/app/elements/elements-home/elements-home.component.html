@@ -1,1 +1,10 @@
-<p>elements-home works!</p>
+<div class="ui sizer vertical segment">
+    <div class="ui medium header">Parameters</div>
+    <div class="box">
+        <input (input)="onInput($event.target.value)" />
+        <button (click)="toggleHeader()">Toggle header</button>
+    </div>
+    <div class="ui raised segment">
+        <app-placeholder [header]="header" [lines]="lines"></app-placeholder>
+    </div>
+</div>
