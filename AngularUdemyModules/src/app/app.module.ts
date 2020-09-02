@@ -6,6 +6,7 @@ import {CollectionsModule} from './collections/collections.module';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
     NotFoundComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     ElementsModule,
     CollectionsModule,
