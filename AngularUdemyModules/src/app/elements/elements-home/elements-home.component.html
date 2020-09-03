@@ -10,9 +10,29 @@
 </div>
 <app-better-divider>Segment</app-better-divider>
 <app-segment>
-    <content>    
+    <content>
         <i class="glass martini icon purple"></i>
         No drinks served.
     </content>
     <button class="ui primary button">Serve drinks!</button>
+    <!-- displays in a card -->
+    <!-- ng-content select works also on CSS classes -->
+    <div class="ui statistics">
+        <div class="purple statistic">
+            <div class="value">
+                27'589
+            </div>
+            <div class="label">
+                drinks served this month
+            </div>
+        </div>
+    </div>
+    <!-- display is not necessarily described in order -->
+    <!-- ng-content select works also on selectors -->
+    <div description>
+        <div class="meta">
+            <div class="description">The best bar in town, by invitation only.</div>
+        </div>
+        <hr>
+    </div>
 </app-segment>
