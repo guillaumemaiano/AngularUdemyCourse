@@ -6,9 +6,8 @@
     </thead>
     <tbody>
         <tr *ngFor="let president of data">
-            <td >{{ president.name }}</td>
-            <td >{{ president.succession }}</td>
-            <td >{{ president.killed ? "winner" : "loser"}}</td>
+            <td *ngFor="let header of headers"> {{  president[header.key] }}
+            </td>
         </tr>
     </tbody>
 </table>
