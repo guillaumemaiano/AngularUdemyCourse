@@ -1,0 +1,4 @@
+/* this trick make sure nothing displays if the select component is empty in  ng-content  (here in the case of the icon header) */
+div.ui.icon.header:empty {
+    display: none;
+}
