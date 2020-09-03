@@ -1,0 +1,14 @@
+<table class="ui table">
+    <thead>
+        <tr>
+            <th *ngFor="let header of headers">{{ header.label }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let president of data">
+            <td >{{ president.name }}</td>
+            <td >{{ president.succession }}</td>
+            <td >{{ president.killed ? "winner" : "loser"}}</td>
+        </tr>
+    </tbody>
+</table>
